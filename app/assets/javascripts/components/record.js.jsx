@@ -6,6 +6,6 @@ var Record = React.createClass({
         <td>{this.props.record.title}</td>
         <td>{amountFormat(this.props.record.amount)}</td>
       </tr>
-    )
+    );
   }
-})
+});
