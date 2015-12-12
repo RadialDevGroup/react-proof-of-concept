@@ -49,7 +49,7 @@ var Records = React.createClass({
         <h2 className="title">Records</h2>
         <div className="row">
           <AmountBox type="success" amount={this.credits()} text="Credit" />
-          <AmountBox type="success" amount={this.debits()} text="Debit" />
+          <AmountBox type="danger" amount={this.debits()} text="Debit" />
           <AmountBox type="info" amount={this.balance()} text="Balance" />
         </div>
         <RecordForm handleNewRecord={this.addRecord} />
