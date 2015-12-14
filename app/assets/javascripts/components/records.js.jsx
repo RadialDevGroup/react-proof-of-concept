@@ -10,6 +10,12 @@ var Records = React.createClass({
     return this.replaceState({records: records});
   },
 
+  updateRecord: function(record, data) {
+    var index = this.state.records.indexOf(record);
+    var records = React.addons.update(this.state.records, {$splice: [[index, 1, data]]});
+    return this.replaceState({records: records});
+  },
+
   getInitialState: function() {
     return {records: this.props.data};
   },
@@ -46,7 +52,7 @@ var Records = React.createClass({
     var _this = this;
     var recordNodes = this.state.records.map(function(record) {
       return (
-        <Record key={record.id} record={record} handleDeleteRecord={_this.deleteRecord} />
+        <Record key={record.id} record={record} handleDeleteRecord={_this.deleteRecord} handleEditRecord={_this.updateRecord} />
       );
     });
 
